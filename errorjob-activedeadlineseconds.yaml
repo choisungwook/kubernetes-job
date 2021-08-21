@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: errorjob-unvalidcommand-activedeadlineseconds
+spec:
+  activeDeadlineSeconds: 10
+  template:
+    spec:
+      containers:
+      - name: errorjob-unvalidcommand
+        image: busybox
+        command: ["ls", "unvalid path"]
+      restartPolicy: Never

@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: infinity-print-activedeadlineseconds
+spec:
+  activeDeadlineSeconds: 10
+  template:
+    spec:
+      containers:
+      - name: infinity-print-activedeadlineseconds
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 3; done"]
+      restartPolicy: Never

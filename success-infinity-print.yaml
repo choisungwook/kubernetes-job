@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: infinity-print
+spec:
+  template:
+    spec:
+      containers:
+      - name: infinity-print
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 3; done"]
+      restartPolicy: Never
