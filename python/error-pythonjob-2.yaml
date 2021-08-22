@@ -1,12 +1,11 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: errorjob-restartpod
+  name: error-pythonjob-2
 spec:
   template:
     spec:
       containers:
-      - name: poderror-unexitedcode
-        image: busybox
-        command: ["exit 1"]
+      - name: errorjob-python
+        image: choisunguk/k8s-jobtest-error1:job2
       restartPolicy: OnFailure
