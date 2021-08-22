@@ -10,4 +10,3 @@ spec:
         image: busybox
         command: ["echo", "helloworld"]
       restartPolicy: Never
-
